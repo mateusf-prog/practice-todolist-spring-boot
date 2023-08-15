@@ -3,9 +3,7 @@ package br.com.mateus.todolist.controller;
 import br.com.mateus.todolist.entity.Todo;
 import br.com.mateus.todolist.service.TodoService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -20,5 +18,11 @@ public class TodoController {
     @GetMapping("/todos")
     public List<Todo> listAll() {
         return todoService.listAll();
+    }
+
+    // define method POST for save object
+    @PostMapping("/todos")
+    public Todo createTodo(@RequestBody Todo obj) {
+        return todoService.createTodo(obj);
     }
 }
