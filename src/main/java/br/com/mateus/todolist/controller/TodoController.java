@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
@@ -24,5 +25,11 @@ public class TodoController {
     @PostMapping("/todos")
     public Todo createTodo(@RequestBody Todo obj) {
         return todoService.createTodo(obj);
+    }
+
+    // define method GET for find by object Id
+    @GetMapping("/todos/{id}")
+    public Optional<Todo> findById(@PathVariable int id) {
+        return todoService.findById(id);
     }
 }

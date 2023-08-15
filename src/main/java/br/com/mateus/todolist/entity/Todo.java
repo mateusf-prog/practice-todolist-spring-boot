@@ -21,5 +21,5 @@ public class Todo {
     private String description;
 
     @Column(name = "todo_status")
-    private Status status;
+    private String status;
 }
