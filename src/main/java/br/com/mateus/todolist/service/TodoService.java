@@ -69,13 +69,28 @@ public class TodoService {
             throw new RestNullValueException("Name, description or status cannot be null!");
         }
 
-        // find object in the database
+        // find the object in the database
         Optional<Todo> tempTodo = todoDAO.findById(theTodo.getId());
 
         // update object
         if (tempTodo.isPresent()) {
             todoDAO.save(theTodo);
             return theTodo;
+        } else {
+            throw new RestNotFoundException("Object not found!");
+        }
+    }
+
+    @Transactional
+    public String deleteTodo(int id) {
+
+        // find the object in the database
+        Optional<Todo> theTodo = todoDAO.findById(id);
+
+        // delete object
+        if (theTodo.isPresent()) {
+            todoDAO.delete(theTodo.get());
+            return "Success delete!";
         } else {
             throw new RestNotFoundException("Object not found!");
         }

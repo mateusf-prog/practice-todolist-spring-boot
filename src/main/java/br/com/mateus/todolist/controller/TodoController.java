@@ -38,4 +38,10 @@ public class TodoController {
     public Todo updateTodo(@RequestBody Todo theTodo) {
         return todoService.updateTodo(theTodo);
     }
+
+    // define method DELETE for delete object
+    @DeleteMapping("/todos/{id}")
+    public String deleteTodo(@PathVariable int id) {
+        return todoService.deleteTodo(id);
+    }
 }
