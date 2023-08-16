@@ -1,10 +1,10 @@
 package br.com.mateus.todolist.exception;
 
-public class EmptyException extends RuntimeException {
+public class RestEmptyException extends RuntimeException {
 
     private String msg;
 
-    public EmptyException(String msg) {
+    public RestEmptyException(String msg) {
         super(msg);
     }
 

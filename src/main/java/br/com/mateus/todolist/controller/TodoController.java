@@ -32,4 +32,10 @@ public class TodoController {
     public Optional<Todo> findById(@PathVariable int id) {
         return todoService.findById(id);
     }
+
+    // define method PUT for update object
+    @PutMapping("/todos")
+    public Todo updateTodo(@RequestBody Todo theTodo) {
+        return todoService.updateTodo(theTodo);
+    }
 }

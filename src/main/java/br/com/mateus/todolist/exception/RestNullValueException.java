@@ -1,10 +1,10 @@
 package br.com.mateus.todolist.exception;
 
-public class NullValueException extends RuntimeException {
+public class RestNullValueException extends RuntimeException {
 
     private String msg;
 
-    public NullValueException(String msg) {
+    public RestNullValueException(String msg) {
         super(msg);
     }
 

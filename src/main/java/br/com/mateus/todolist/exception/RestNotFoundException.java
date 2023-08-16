@@ -1,10 +1,10 @@
 package br.com.mateus.todolist.exception;
 
-public class NotFoundException extends RuntimeException {
+public class RestNotFoundException extends RuntimeException {
 
     private String msg;
 
-    public NotFoundException(String msg) {
+    public RestNotFoundException(String msg) {
         super(msg);
     }
 
