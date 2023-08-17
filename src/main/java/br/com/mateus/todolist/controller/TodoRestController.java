@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @RestController
 @RequestMapping("/api")
-public class TodoController {
+public class TodoRestController {
 
     @Autowired
     private TodoService todoService;
