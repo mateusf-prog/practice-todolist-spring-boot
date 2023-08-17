@@ -4,7 +4,7 @@
 - MySQL
 - Lombok
   
-API - Task manager with mysql database
+API - Task manager with MySQL database
 
 1. Create a task
 2. Edit a task
